@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f7f4;
+  color: #333;
+  line-height: 1.5;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.gallery-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #4a4a4a;
+  letter-spacing: -0.5px;
+}
+
+.favorites-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.favorites-container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.favorite-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f4f2ef;
+  border-radius: 12px;
+  padding: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.favorite-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.favorite-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.favorite-card button {
+  background: #e07a5f;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.favorite-card button:hover {
+  background: #d45d43;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.cat-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-card button {
+  margin: 0.8rem auto 1rem auto;
+  background: transparent;
+  border: 2px solid #e0c9b6;
+  color: #8b6b5a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.cat-card button:hover {
+  background: #e0c9b6;
+  color: #fff;
+  border-color: #c7a58b;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.loading {
+  background: #f0ede6;
+  color: #7a6e5d;
+  font-size: 1.1rem;
+}
+
+.error {
+  background: #fce8e6;
+  color: #b84c3b;
+  border: 1px solid #f5c6c0;
+}
+
+.load-more-button {
+  display: block;
+  margin: 0 auto;
+  background: #b7a392;
+  color: white;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(183, 163, 146, 0.3);
+}
+
+.load-more-button:hover:not(:disabled) {
+  background: #9e8a7a;
+  transform: translateY(-2px);
+}
+
+.load-more-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #cbc0b6;
+}
+
+@media (max-width: 600px) {
+  .gallery-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .cat-image {
+    height: 220px;
+  }
+
+  .favorite-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
