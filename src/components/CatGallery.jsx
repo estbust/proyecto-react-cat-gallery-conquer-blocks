@@ -55,7 +55,7 @@ function CatGallery() {
         <h2>Tus michis favoritos:</h2>
         {favorites.map((fav) => (
           <div key={fav.id} className="favorite-card">
-            <img src={fav.url} alt="Favorite cat" className="favorite-image" />
+            <img src={fav.url} alt="Gato favorito" className="favorite-image" />
             <button onClick={() => handleRemoveFavorite(fav)}>Eliminar</button>
           </div>
         ))}
